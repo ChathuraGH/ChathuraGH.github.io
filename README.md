@@ -11,5 +11,5 @@ This site contains collection of cool features and code examples that were used 
 # Issues, Pull requests are welcome ❤️.
 👍👍👆👆👆👆👍👍
 
-# Supposed me.
+# Support me.
 
