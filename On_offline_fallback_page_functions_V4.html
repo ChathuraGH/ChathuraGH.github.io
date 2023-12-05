@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Code Experiments</title>
+	<title>Code Experiment 3</title>
 	
 </head>
 <body>
@@ -12,22 +12,152 @@
 
 
 
-<h1>Hello 💓 coders..</h1>
+
+<a href="window.history.back();">< Go Home</a>
+
 
 <br><br><br>
 
-<a href="/Simple_pooling_buttons_with_half_percentages">. Simple pooling buttons with half percentages</a>
-
-
+1)
+<h2>Open DevTools..</h2>
 <br><br>
 
-<a href="/styled_console_log">. Styled Console Log</a>
-
+2)
+<h2>Open Application Tab..</h2>
 <br><br>
 
-<a href="/On_offline_fallback_page_functions_V4">. On Offline Fallback Page Functions</a>
-
+3)
+<h2>Click Offline Cheack Box..</h2>
 <br><br>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+
+
+
+
+<div class="online_offline_state_notification"></div>
+
+
+<script type="text/javascript">
+
+window.addEventListener("online", function(){
+  $('.online_offline_state_notification').html('Online. Your connection is back.');
+  $('.online_offline_state_notification').css('color', 'green');
+  $('.online_offline_state_notification').slideUp('slow', function() {});
+});
+
+window.addEventListener("offline", function(){
+  $('.online_offline_state_notification').html('Offline. No Internet connection.<a href=/Player><button class=glowing-button-btn>Download</button></a><a href=/paintings><button class=glowing-button-btn>Paint</button></a><a href=/tts><button class=glowing-button-btn>TTS</button></a><a href=/This_Device><button class=glowing-button-btn>This Device</button></a>');
+  $('.online_offline_state_notification').css('color', 'red');
+  $('.online_offline_state_notification').slideDown('slow', function() {});
+});
+
+</script>
+
+
+
+
+<style type="text/css">
+
+.online_offline_state_notification{
+  display:none;
+  position:fixed;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  width:100%;
+  height:25px;
+  background-color: lightblue;
+  z-index: 10000000000;
+}
+
+.online_offline_state_notification button {
+  border-radius:5%;
+  font-weight: bold;
+
+  /*color:blue;*/
+  color:black;
+  /*color:white;*/
+  background-color:lightblue;
+  border: 2px solid black;
+
+  margin-right: 4px;
+}
+.online_offline_state_notification button:hover {
+  color:blue;
+  background-color:lightgreen;
+  border: 2px solid #ff0066;
+
+}
+</style>
+
+
+
+
+<style type="text/css">
+
+
+
+
+.glowing-button-btn {
+  position: relative;
+  display: inline-block;
+  /*width: 200px;*/
+  /*height: 60px;*/
+  text-align: center;
+  /*line-height: 60px;*/
+  color: #fff;
+  /*font-size: 24px;*/
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+  z-index: 1;
+}
+ 
+.glowing-button-btn:hover {
+  animation: animate 8s linear infinite;
+}
+ 
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+ 
+.glowing-button-btn:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: .5s;
+}
+ 
+.glowing-button-btn:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
+
+
+</style>
 
 
 
