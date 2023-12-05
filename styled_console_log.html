@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Code Experiments</title>
+	<title>Code Experiment 2</title>
 	
 </head>
 <body>
@@ -12,23 +12,362 @@
 
 
 
-<h1>Hello 💓 coders..</h1>
+
+
+<a href="window.history.back();">< Go Home</a>
 
 <br><br><br>
 
-<a href="/Simple_pooling_buttons_with_half_percentages">. Simple pooling buttons with half percentages</a>
+<h2>Look at browser conole..</h2>
 
 
-<br><br>
 
-<a href="/styled_console_log">. Styled Console Log</a>
 
-<br><br>
 
-<a href="/On_offline_fallback_page_functions_V4">. On Offline Fallback Page Functions</a>
 
-<br><br>
 
+<!-- styled_console_log.html START -->
+
+<script type="text/javascript">
+	
+
+	// log
+	console.log("aaaaaaaaaa");
+	console.info("bbbbbbbbbbbbbbbbbbbb");
+
+	// error
+	console.error("dddddddddddd");
+	
+	// varbose
+	console.debug('fffffffffffff');
+
+	// warning
+	console.warn("eeeeeeeeeeeeeeee");
+
+
+//
+
+</script>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+	const style1 = 'color:red; font-size:60px; font-weight: bold; -webkit-text-stroke: 1px black; background:#eee;'
+	console.warn("%c stop 🛑!", style1);
+	const style0 = 'color:red; font-size:30px; font-weight: bold; -webkit-text-stroke: 1px black; background:#eee;'
+	console.warn("%c Don't give people access here other than your self;They maybe trying to hack your account.(steal your information/account).", style0);
+</script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+
+<script type="text/javascript">
+
+	console.log("%cBlue!", "color: blue;");
+	console.log("%cBlue! %cGreen", "color: blue; font-size:15px;", "color: green; font-size:12px;");
+
+
+
+//
+
+
+	var style = 'color: tomato; background:#eee; -webkit-text-stroke: 1px black; font-size:30px;';
+	console.log('%cHi, We are Happy 😆 to have you as our customer', style );
+
+
+
+//
+
+	const style0 = 'color:red; font-size:30px; font-weight: bold; -webkit-text-stroke: 1px black;'
+	console.log("%c Javascript Jeep Welcomes you", style0);
+
+//
+
+	const style1 = 'color:red; font-size:30px; font-weight: bold; -webkit-text-stroke: 1px black;'
+	console.log("%c stop 🛑!", style1);
+
+
+//
+
+	console.log("%cJavascript Jeep 🚙in Blue %cJavascript Jeep 🚙in red", "color:blue; font-size:50px", "color:red; font-size:50px" );
+
+
+
+
+//
+
+
+
+
+
+	var styleArray= [
+	  'background-image:    url("https://media.giphy.com/media/2dQ3FMaMFccpi/giphy.gif")',
+	  'background-size: cover',
+	  'color: #fff',
+	  'padding: 10px 20px',
+	  'line-height: 35px',
+	  'width : 70px',
+	  'height : 70px',
+	  'border : 5px solid black'
+	];
+	console.log('%cI love you!', styleArray.join(';'));
+//
+
+	console.log('%c JavaScript!!', 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+
+//
+
+
+
+
+
+	console.log('%c Rainbowww!', 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+</script>
+
+
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<script type="text/javascript">
+
+	console.log(
+		"%cAltering the text color",
+		"color: fuchsia"
+	);
+
+	console.log(
+		"%cAltering the text experience",
+		"background-color: fuchsia ; color: white ; font-weight: bold ; " +
+		"font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+		"font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
+	);
+
+	// NOTE: In this demo, inline-block isn't needed in Chrome; but, it is needed in
+	// Firefox or the block properties, like padding, don't work. Trying to use
+	// "block" will work in Chrome; but, will go full-width in Firefox.
+	console.log(
+		"%cAltering the box display",
+		"display: inline-block ; border: 3px solid red ; border-radius: 7px ; " +
+		"padding: 10px ; margin: 20px ;"
+	);
+
+	// NOTE: Background-images work in Chrome, but not in Firefox. Also, at least
+	// locally, only fully qualified URLs seems to work (but that may have been
+	// something I was messing up).
+	// --
+	// Also, it doesn't look like width/height work on box-model. As such, I am using
+	// padding to push-out the box size.
+	console.log(
+		"%cBackground image",
+		"display: inline-block ; background-image: url( 'https://bennadel.github.io/JavaScript-Demos/demos/console-log-css/rock.png' ) ; " +
+		"background-size: cover ; padding: 10px 175px 158px 10px ; " +
+		"border: 2px solid black ; font-size: 11px ; line-height: 11px ; " +
+		"font-family: monospace ;"
+	);
+
+	// The same CSS styling can be used with many of the other console methods, like
+	// the .group() method.
+	console.group(
+		"%cGrouped Output",
+		"background-color: #e0005a ; color: #ffffff ; font-weight: bold ; padding: 4px ;"
+	);
+	console.log( "Groups are cool for grouped stuff." );
+	console.log( "Totes magotes" );
+	console.groupEnd();
+
+</script>
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+	// I provide a logging API that has some special sauce for formatting.
+	var echo = (function() {
+
+		var queue = [];
+		var ECHO_TOKEN = {};
+		var RESET_INPUT = "%c ";
+		var RESET_CSS = "";
+
+		// Attach formatting utility method.
+		function alertFormatting( value ) {
+
+			queue.push({
+				value: value,
+				css: "display: inline-block ; background-color: #e0005a ; color: #ffffff ; font-weight: bold ; padding: 3px 7px 3px 7px ; border-radius: 3px 3px 3px 3px ;"
+			});
+
+			return( ECHO_TOKEN );
+
+		}
+
+		// Attach formatting utility method.
+		function warningFormatting( value ) {
+
+			queue.push({
+				value: value,
+				css: "display: inline-block ; background-color: gold ; color: black ; font-weight: bold ; padding: 3px 7px 3px 7px ; border-radius: 3px 3px 3px 3px ;"
+			});
+
+			return( ECHO_TOKEN );
+
+		}
+
+		// I provide an echo-based proxy to the given Console Function. This uses an
+		// internal queue to aggregate values before calling the given Console
+		// Function with the desired formatting.
+		function using( consoleFunction ) {
+
+			function consoleFunctionProxy() {
+
+				// As we loop over the arguments, we're going to aggregate a set of
+				// inputs and modifiers. The Inputs will ultimately be collapsed down
+				// into a single string that acts as the first console.log parameter
+				// while the modifiers are then SPREAD into console.log as 2...N.
+				// --
+				// NOTE: After each input/modifier pair, I'm adding a RESET pairing.
+				// This implicitly resets the CSS after every formatted pairing.
+				var inputs = [];
+				var modifiers = [];
+
+				for ( var i = 0 ; i < arguments.length ; i++ ) {
+
+					// When the formatting utility methods are called, they return
+					// a special token. This indicates that we should pull the
+					// corresponding value out of the QUEUE instead of trying to
+					// output the given argument directly.
+					if ( arguments[ i ] === ECHO_TOKEN ) {
+
+						var item = queue.shift();
+
+						inputs.push( ( "%c" + item.value ), RESET_INPUT );
+						modifiers.push( item.css, RESET_CSS );
+
+					// For every other argument type, output the value directly.
+					} else {
+
+						var arg = arguments[ i ];
+
+						if (
+							( typeof( arg ) === "object" ) ||
+							( typeof( arg ) === "function" )
+							) {
+
+							inputs.push( "%o", RESET_INPUT );
+							modifiers.push( arg, RESET_CSS );
+
+						} else {
+
+							inputs.push( ( "%c" + arg ), RESET_INPUT );
+							modifiers.push( RESET_CSS, RESET_CSS );
+
+						}
+
+					}
+
+				}
+
+				consoleFunction( inputs.join( "" ), ...modifiers );
+
+				// Once we output the aggregated value, reset the queue. This should have
+				// already been emptied by the .shift() calls; but the explicit reset
+				// here acts as both a marker of intention as well as a fail-safe.
+				queue = [];
+
+			}
+
+			return( consoleFunctionProxy );
+
+		}
+
+		return({
+			// Console(ish) functions.
+			log: using( console.log ),
+			warn: using( console.warn ),
+			error: using( console.error ),
+			trace: using( console.trace ),
+			group: using( console.group ),
+			groupEnd: using( console.groupEnd ),
+
+			// Formatting functions.
+			asAlert: alertFormatting,
+			asWarning: warningFormatting
+		});
+
+	})();
+
+	// --------------------------------------------------------------------------- //
+	// --------------------------------------------------------------------------- //
+
+	// Let's try mixing a bunch of values together.
+	echo.log(
+		echo.asAlert( "This is great!" ),
+		"Right!",
+		{ "i am": "an object" },
+		null,
+		[ "an array" ],
+		function amAFunction() {},
+		echo.asWarning( "I mean, right?!?!?!" )
+	);
+
+	echo.log();
+
+	// Let's try a more sensible example.
+	echo.group( echo.asWarning( "Arnold Schwarzenegger Movies" ) );
+	echo.log( "The Running Man" );
+	echo.log( "Terminator 2", echo.asAlert( "Amazing!" ), echo.asWarning( "TOP 100" ) );
+	echo.log( "Predator" );
+	echo.log( "Twins", echo.asWarning( "TOP 50" ) );
+	echo.groupEnd();
+
+	echo.log();
+
+	echo.log( echo.asAlert( "Winner Winner" ), "Chicken dinner!" );
+
+</script>
+
+
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<script type="text/javascript">
+
+
+
+	console.log("%c CapsCode!", "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113); margin-bottom: 12px; padding: 5%");
+
+
+	console.log("%c ", "font-size: 1px; padding: 166.5px 250px; background-size: 500px 333px; background: no-repeat url(https://www.capscode.in/static/media/cap.0d0af8f0.png);");
+	console.log("%c ", "font-size: 1px; padding: 240px 123.5px; background-size: 247px 480px; background: no-repeat url(https://www.capscode.in/static/media/cap.0d0af8f0.png);");
+	console.log("%c ", "font-size: 1px; padding: 125px 125px; background-size: 250px 250px; background: no-repeat url(https://i2.wp.com/i.giphy.com/media/12BYUePgtn7sis/giphy-downsized.gif?w=770&amp;ssl=1);");
+	console.log("%c ", "font-size: 1px; padding: 215px 385px; background-size: 770px 430px; background: no-repeat url(https://i0.wp.com/i.giphy.com/media/ZVik7pBtu9dNS/giphy-downsized.gif?w=770&amp;ssl=1);");
+
+
+
+
+
+
+</script>
+
+
+<!-- styled_console_log.html END -->
 
 
 
