@@ -1,1 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Code Experiment 1</title>
+	
+</head>
+<body>
 
+<!-- //////////////////// -->
+
+
+
+<section id="poll_button_section_ID" data-id="section_ID">
+
+<div>
+  <input type="checkbox" data-progress-id="poll_button_input_progress_ID_1" data-poll-button-section-id="poll_button_section_ID" id="poll_button_input_ID_1" name="poll_button_section_ID" value="2">
+
+  <label for="poll_button_input_ID_1">
+    <p>option 1.</p>
+    <progress class="poll_button_progress" id="poll_button_input_progress_ID_1" value="0" max="100"></progress>
+    <br>
+      <span id="poll_button_input_ID_1_precentage_span">20%(15)</span>
+  </label>
+
+</div>
+
+<div>
+  <input type="checkbox"  data-progress-id="poll_button_input_progress_ID_2" data-poll-button-section-id="poll_button_section_ID" id="poll_button_input_ID_2" name="poll_button_section_ID" value="0">
+
+  <label for="poll_button_input_ID_2">
+    <p>option 2.</p>
+    <progress class="poll_button_progress" id="poll_button_input_progress_ID_2" value="0" max="100"></progress>
+    <br>
+      <span id="poll_button_input_ID_2_precentage_span">44.44%(424)</span>
+
+  </lasbel>
+</div>
+
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+function Uncheck_at_Reclick(thi,event){
+
+  if(thi.checked){
+
+    // thi.checked=false;
+
+    $(thi).val( parseInt($(thi).val())+1 );
+    alert("1111");
+
+
+  }
+
+  else{
+    // thi.checked=true;
+    $(thi).val( parseInt($(thi).val())-1 );
+    alert("2222");
+  }
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Poll_vote_Precntage_Recalculate(thi,event){
+
+  var all_poll_votes=0;
+
+
+  var sid0=$(thi).data( "pollButtonSectionId" );
+  console.log(sid0);
+
+  var sid='#'+ sid0;
+  console.log(sid);
+/////////
+// getting all section inputs
+  var all_section_inputs=$(sid+' input');
+  console.log(all_section_inputs);
+////////////
+// getting all poll votes
+  $(all_section_inputs).each(function( index ) {
+    all_poll_votes += parseInt( $(this).val());
+    console.log('all_poll_votes--'+all_poll_votes);
+  });
+
+  console.log('all_poll_votes-all-'+all_poll_votes);
+////////////
+
+
+  $(all_section_inputs).each(function( index ) {
+
+    var barid='#'+$(this).data( "progressId" );
+    
+    console.log(barid);
+// caculating precentage value
+    var pprecent = Math.round(((parseInt($(this).val())*100)/all_poll_votes)*10)/10;
+// setting precentage value to progress
+    $(barid).val( pprecent );
+
+
+
+    console.log('precentage--'+$(barid).val());
+
+
+
+// setting precentage value to span
+    $('#' + $(this).attr('id') + '_precentage_span').html($(barid).val() + '%(' + $(this).val() + ')');
+
+
+
+  });
+
+
+////////////////////
+
+  $(all_section_inputs).each(function( index ) {
+    console.log( index + ": " + $( this ).text() );
+
+
+    console.log( $(this).val() );
+
+  });
+
+
+
+};
+
+function Poll_vote(thi,event){
+  
+
+	// var id='#'+$(thi).attr('id');
+	// var p=$('#kk .poll_button_progress');
+
+
+ //  var id =$(thi).data( "progressId" );
+ //  var p=$('#'+id);
+	// p.attr('value',p.val()+1);
+
+ //  console.log(p);
+
+
+
+  // $(thi).val( parseInt($(thi).val())+1 );
+
+  // console.log(p);
+  Uncheck_at_Reclick(thi,event);
+
+	// alert('hi' + p.attr('value'));
+  
+
+  Poll_vote_Precntage_Recalculate(thi,event);
+};
+
+
+
+$( "section input" ).change(function(event) {
+  Poll_vote(this,event);
+  event.stopImmediatePropagation();
+  event.stopPropagation();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// loop to calculate initial progressess
+$( "section" ).each(function( index ) {
+  
+
+  var all_poll_votes=0;
+
+
+  // var sid0=$(thi).data( "pollButtonSectionId" );
+  // console.log(sid0);
+
+  var sid='#'+ $(this).attr('id');
+  console.log(sid);
+/////////
+// getting all section inputs
+  var all_section_inputs=$(sid+' input');
+  console.log(all_section_inputs);
+////////////
+// getting all poll votes
+  $(all_section_inputs).each(function( index ) {
+    all_poll_votes += parseInt( $(this).val());
+    console.log('all_poll_votes--'+all_poll_votes);
+  });
+
+  console.log('all_poll_votes-all-'+all_poll_votes);
+////////////
+
+
+  $(all_section_inputs).each(function( index ) {
+
+    var barid='#'+$(this).data( "progressId" );
+    
+    console.log(barid);
+// caculating precentage value
+    var pprecent = Math.round(((parseInt($(this).val())*100)/all_poll_votes)*10)/10;
+// setting precentage value to progress
+    $(barid).val( pprecent );
+
+
+
+    console.log('precentage--'+$(barid).val());
+
+// setting precentage value to span
+    $('#' + $(this).attr('id') + '_precentage_span').html($(barid).val() + '%(' + $(this).val() + ')');
+
+
+
+
+  });
+
+
+////////////////////
+
+  $(all_section_inputs).each(function( index ) {
+    console.log( index + ": " + $( this ).text() );
+
+
+    console.log( $(this).val() );
+
+  });
+
+
+});
+
+</script>
+  
+
+
+
+<style type="text/css">
+
+section {
+	width: 200px;
+  /*display: flex;*/
+  /*flex-flow: row wrap;*/
+}
+
+section > div {
+  flex: 1;
+  /*padding: 0.5rem;*/
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:not(:disabled) ~ label {
+  cursor: pointer;
+}
+input[type="checkbox"]:disabled ~ label {
+  color: #bcc2bf;
+  border-color: #bcc2bf;
+  box-shadow: none;
+}
+
+label {
+  display: block;
+  background: white;
+  background-color: lightgrey;;
+  border: 1px solid #20df80;
+  border-radius: 2px;
+  padding: 2px;
+  margin-bottom: 1px;
+  text-align: center;
+  box-shadow: 0px 3px 10px -2px rgba(161, 170, 166, 0.5);
+  position: relative;
+}
+
+
+label:hover {
+  background-color: lightsteelblue;
+  /*background-color: lightblue;*/
+  color: blue;
+}
+
+input[type="checkbox"]:checked + label {
+  background: #20df80;
+  /*color: white;*/
+  /*color: black;*/
+  color: blue;
+}
+/*input[type="radio"]:checked + label::after {
+  color: #3d3f43;
+  font-family: FontAwesome;
+  border: 2px solid #1dc973;
+  content: "\f00c";
+  font-size: 24px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
+}*/
+
+label p {
+  font-weight: 900;
+  margin: 0px;
+}
+
+@media only screen and (max-width: 700px) {
+  section {
+    /*flex-direction: column;*/
+  }
+}
+
+</style>
+
+
+
+
+
+<!-- ////////////////////////////////////// -->
+  
+<style type="text/css">
+
+body{
+	background-color:lightblue;
+
+}
+
+</style>
+
+
+
+
+	
+</body>
+</html>
