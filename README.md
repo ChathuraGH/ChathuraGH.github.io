@@ -1,7 +1,7 @@
 # ChathuraGH.github.io ✌
 My public github site⚡.
 Visit, 
-# https://chathuragh.github.io/
+# https://chathuragh.github.io
 
 This site contains collection of cool features and code examples that were used in building my django web projects. 😊. 
 
