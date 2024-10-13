@@ -4,10 +4,17 @@
 ![Pikachu](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151557.376.gif)
 ![Pikachu](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151623.797.gif)
 giphy---2022-04-06T151550.032.gif
+![Pikachu](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151550.032.gif)
 
+![Pikachu2](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151129.867.gif)
+![Pikachu2](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151717.768.gif)
+![Pikachu2](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151759.757.gif)
 -->
 
-![Pikachu](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151550.032.gif)
+
+![Pikachu2](https://chathuragh.github.io/assets/Stickers-downloded-from-giphy/giphy---2022-04-06T151129.867.gif)
+
+
 
 
 My public github site⚡.
