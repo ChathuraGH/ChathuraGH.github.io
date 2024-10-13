@@ -1,4 +1,4 @@
-# ChathuraGH.github.io ✌
+# [ChathuraGH.github.io](https://chathuragh.github.io)  ✌
 My public github site⚡.
 Visit, 
 # https://chathuragh.github.io
