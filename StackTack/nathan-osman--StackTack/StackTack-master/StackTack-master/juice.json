@@ -1,0 +1,10 @@
+{
+    "options": {
+        "embed-css":    { "value": false, "help": "embeds the CSS  inside the JavaScript source" },
+        "jquery-check": { "value": true,  "help": "checks if jQuery is loaded and loads it if not" }
+    },
+    "files": [
+        { "filename": "stacktack.js",  "output": "stacktack.min.js" },
+        { "filename": "stacktack.css", "output": "stacktack.min.css", "condition": "!embed-css" }
+    ]
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>StackTack Demo</title>
+        
+        <style type="text/css">
+            body
+            {
+                font-family: Arial, Helvetica, san-serif;
+                
+                background: #E6E3D9;
+            }
+        </style>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://app.stacktack.com/jquery.stacktack.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(document).stacktack({width: '900px'});
+                
+                $(".modal-dialog").dialog({'width': 600});
+            });
+        </script>
+    </head>
+    
+    <body>
+        <h1>StackTack Demo</h1>
+        <p>Below is a <a href="http://www.stackoverflow.com/questions/518021" target="_blank">StackOverflow question</a> that has been dynamically loaded from the StackApps API (Application Programming Interface) via <a href="https://bitbucket.org/zamtools/stacktack/wiki/Home" target="_blank">StackTack</a>. Only two of its answers are being displayed initially because an answer filter is being used.</p>
+
+        <div id="stacktack-518021" class="width-600px filterAnswers-518038-518053"></div>
+        
+        <p>This question is using the default width and is only displaying its accepted answer using a per-question override.</p>
+        <div id="stacktack-1227286" class="onlyShowAcceptedAnswer-true"></div>
+
+        <p>This question is using a class-based stacktack ID and is only displaying its accepted answer using the per-question override.</p>
+        <div class="stacktack-1227286 onlyShowAcceptedAnswer-true"></div>
+
+        <p>This question is in a JQueryUI modal dialog.  It currently has no theme, but can be closed and dragged around the browser window.</p>
+        <div id="stacktack-1701543" class="width-100percent onlyShowAcceptedAnswer-true modal-dialog"></div>
+    </body>
+</html>
