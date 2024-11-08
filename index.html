@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Chathura Madusanka</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+
+
+
+<!-- ## PART 1 - ANIMATED BORDER ############################################ -->
+
+
+<style type="text/css">
+/**
+  Browser should support Houdini API
+*/
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: false;
+}
+
+:root {
+  --bg-background: #111827;
+  --clr-card: #1f2937;
+  --clr-1: #6420aa;
+  --clr-2: #ff3ea5;
+  --clr-3: #ff7ed4;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+/*   height: 100vh; */
+/*   width: 100%; */
+/*   font-size: 14px; */
+/*   overflow-x: hidden; */
+/*   background-color: var(--bg-background); */
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  position: relative;
+/*   height: 24rem; */
+/*   width: 16rem; */
+  border-radius: 0.45rem;
+  cursor: pointer;
+  background-color: var(--clr-card);
+}
+
+html::after,
+html::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -0.5rem;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1),
+    var(--clr-card)
+  );
+  border-radius: inherit;
+  animation: rotate 2.5s linear infinite;
+}
+
+html::after {
+  filter: blur(3rem);
+}
+
+@keyframes rotate {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+</style>
+
+
+<!-- ####################### -->
+
+
+
+
+
+
+
+<!-- ## PART 2 - CUSTOM SCROLL BAR ########################################### -->
+
+<style type="text/css">
+html {
+  border: 4px solid blue;
+  min-height: 100%;
+
+
+}
+
+
+body {
+  background-color: lightblue !important;
+
+}
+
+a {
+/*   color: black; */
+  color: blue;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+
+
+/* CUSTEM SCROLLBAR  */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    /*height: 15px;*/
+    height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /*background: yellow; */
+    background: #555;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    /*background: #555; */
+    background: gray;
+    border-radius: 10px;
+}
+
+</style>
+
+<!-- ################################## -->
+
+
+<!-- ## PART 3 - MOBILE HEAD COLORS ###################################################### -->
+
+
+<!-- android - change the color of header bar and address bar -->
+<!-- mobile_header_color -->
+<!-- mobile_header_color START-->
+<meta name="theme-color" content="#4285f4">
+<!-- blue -->
+<meta name="theme-color" content="#4285f4">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#4285f4">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#4285f4">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- ################################ -->
+
+
+
+
+<!-- ## GIST DARK THEM ################################# -->
+
+
+<style type="text/css">
+
+/* https://github.com/lonekorean/gist-syntax-themes */
+@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+/*   margin: 20px; */
+/*   font: 16px 'Open Sans', sans-serif; */
+}
+
+</style>
+
+
+<!-- ################################### -->
+
+
+
+</head>
+
+<body>
+
+<div class="w3-container">
+  <!-- <h2>Active Tabs</h2> -->
+  <!-- <p>To highlight the current tab/page the user is on, add a color class, and use JavaScript to update the active link.</p> -->
+
+
+<!-- TABS -->
+  <div class="w3-bar w3-black">
+
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Profile')">Profile</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Profiles')">Profiles</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Projects')">Projects</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Gists')">Gists</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Contributions')">Contributions</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Timeline')">Timeline</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Timeline-Personal')">Timeline-Personal</button>
+
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Contacts')">Contacts</button>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+<!-- TAB CONTENT -->
+<div id="Profile" class="w3-container w3-border city">
+<!-- <zero-md src="https://raw.githubusercontent.com/ChathuraGH/ChathuraGH/refs/heads/main/README.md"></zero-md> -->
+
+😊 I am a Django Full-stack Developer.
+Interested in Python, Django, HTML, CSS, Js, nginx, Jquery +++.
+❤️ System Designing and Development. 
+
+<zero-md src="https://raw.githubusercontent.com/ChathuraGH/ChathuraGH/refs/heads/main/README.md">
+  <template>
+
+    <!-- Sensible host style defaults -->
+<!--     <style>
+      :host { display: block; position: relative; contain: content; }
+      :host([hidden]) { display: none; }
+    </style> -->
+
+    <!-- Github markdown styles (light/dark) -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css" /> -->
+
+    <!-- Highlightjs Github theme (light) -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github.min.css" /> -->
+
+    <!-- Highlightjs Github theme (prefers dark) -->
+    <link rel="stylesheet" media="(prefers-color-scheme:dark)" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
+
+    <!-- KaTeX styles (needed for math) -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" /> -->
+
+  </template>
+</zero-md>
+
+
+<!-- <style type="text/css">
+.markdown-body{
+  background-color: #0d1117;
+} 
+</style> -->
+
+
+</div>
+<!-- TAB CONTENT 1 -->
+  <div id="Profiles" class="w3-container w3-border city" style="display:none">
+
+<ul>
+
+
+
+<br>
+
+
+  <a class="badge-base__link LI-simple-link" href="https://lk.linkedin.com/in/chathura-madusanka-link?trk=profile-badge">
+    <li>Linkedin :- 
+      <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="chathura-madusanka-link" data-version="v1">
+        <span>Chathura Madusanka<span>
+      </div>
+    </li>
+  </a>
+
+
+
+
+
+<style type="text/css">
+/* .badge-base__link,.LI-simple-link */
+.LI-simple-link{
+  color: green;
+}
+/* .badge-base,.LI-profile-badge */
+.LI-simple-link .LI-profile-badge{
+  color: black;
+  background-color: cadetblue;
+}
+
+
+.LI-simple-link iframe{
+/*   color: black; */
+/*   background-color: cadetblue; */
+
+  display: block;
+  color: #14ff00;
+  background-color: darkgrey;
+  margin: auto;
+  padding: 11px;
+  border-style: groove;
+  border-width: 10px;
+  border-color: black;
+  overflow: scroll !important;
+  box-shadow: 0px 0px 6px 8px green, -1px -2px 0px 15px #000f80;
+  /* box-shadow: 2px 0px 6px 8px #000f80; */
+
+}
+
+
+.LI-simple-link iframe:hover {
+/*   color: black; */
+/*   background-color: cadetblue; */
+
+  display: block;
+  color: #14ff00;
+  background-color: darkgrey;
+  margin: auto;
+  padding: 11px;
+  border-style: ridge;
+  border-width: 10px;
+  border-color: black;
+  overflow: scroll !important;
+  box-shadow: 0px 0px 0px 8px #2d312d, -1px -2px 6px 15px #94a0ff, 0px 0px 0px 20px #000000;
+  /* box-shadow: 2px 0px 6px 8px #000f80; */
+
+}
+
+
+.profile-badge{
+  background-color: #3ddc4e !important;
+}
+.profile-badge__header{
+  background-color: #000000 !important;
+}
+
+
+.profile-badge__cta-btn {
+  color:#00f312 !important;
+  border:2px solid blue !important;
+}
+.profile-badge__content-profile-name-link {
+  color: gold !important;
+}
+.profile-badge__content h4 {
+  color: aqua !important;
+}
+</style>
+
+
+<br>
+  <a href="https://buddhism.stackexchange.com/users/25614/pycm"><li>Stackoverflow :- <a href="https://stackoverflow.com/users/13861187/pycm"><img src="https://stackoverflow.com/users/flair/13861187.png" width="208" height="58" alt="profile for Pycm at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Pycm at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></li></a>
+
+
+<br>
+
+  <a href="https://buddhism.stackexchange.com/users/25614/pycm"><li>Buddhism.Stackexchange :- <a href="https://buddhism.stackexchange.com/users/25614/pycm"><img src="https://buddhism.stackexchange.com/users/flair/25614.png" width="208" height="58" alt="profile for Pycm at Buddhism Stack Exchange, Q&amp;A for people practicing or interested in Buddhist philosophy, teaching, and practice" title="profile for Pycm at Buddhism Stack Exchange, Q&amp;A for people practicing or interested in Buddhist philosophy, teaching, and practice"></a></li></a>
+
+
+
+<br>
+
+ <a href="https://github.com/ChathuraGH"><li>Github :- <span>ChathuraGH</span>
+
+  <!-- <script src="d29mk5socxaj4o.cloudfront.net/GitHubPinner.js"></script> -->
+  <!-- <div data="https://github.com/mackboudreau?tab=repositories" class="github-pinner" style="visibility: hidden;"></div> -->
+
+
+<!-- <div class="github-card" data-user="lepture" data-repo="github-cards"></div>
+<script src="https://cdn.jsdelivr.net/gh/lepture/github-cards@latest/jsdelivr/widget.js"></script> -->
+
+  <!-- <div id="github-card" data-user="PhanhotboY" data-height="150px" data-width="350px"></div> -->
+<!-- <script src="https://cdn.jsdelivr.net/gh/PhanhotboY/profile-card@1.0.1/jsdelivr/widget.js"></script> -->
+  <!-- <div class="github-card" data-github="ChathuraGH" data-width="400" data-height="150" data-theme="default"></div> -->
+<!-- <script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script> -->
+<!-- <script src="https://lab.lepture.com/github-cards/widget.js"></script> -->
+</li></a>
+
+
+
+<br>
+ <a href="https://codepen.io/Chathura-m"><li>Codepen :- <span>Chathura-m</span></li></a>
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+<br>
+  <!-- <li>Linkedin :- </li> -->
+
+
+
+
+
+</ul>
+
+
+<style type="text/css" media="screen">
+a li {
+/*   color: black; */
+  color: blue !important;
+  font-weight: 500 !important;
+  font-size: large !important;
+}
+a li span {
+/*   color: black; */
+  color: blue !important;
+  font-weight: bold !important;
+  font-size: x-large !important;
+}
+
+
+
+
+ul li {
+  background: #cce5ff;
+  color: darkblue;
+  margin: 0.5px;
+  padding: 2px;
+}
+
+ul li:hover {
+  background: #448ad2;
+/*   color: lightblue; */
+  font-weight:bold;
+  margin: 0.5px;
+  padding: 2px;
+}
+
+ul li:active {
+  background: #30e652;
+  color: darkblue;
+  margin: 0.5px;
+  padding: 2px;
+}
+</style>
+
+
+
+  </div>
+
+<!-- TAB CONTENT 2 -->
+  <div id="Projects" class="w3-container w3-border city" style="display:none">
+    <h2>Projects</h2>
+
+
+
+<div style="border:1px solid blue;">
+
+<a href="https://github.com/ChathuraGH/calculator-python">ChathuraGH/calculator-python</a>
+
+<zero-md src="https://raw.githubusercontent.com/ChathuraGH/calculator-python/refs/heads/main/README.md">
+  <template>
+        <!-- Sensible host style defaults -->
+    <style>
+      .markdown-body{background-color:#ff99cc;}
+    </style>
+    <link rel="stylesheet" media="(prefers-color-scheme:dark)" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
+  </template>
+</zero-md>
+
+</div>
+
+
+<!-- <script src="https://raw.githubusercontent.com/darcyclarke/Repo.js/refs/heads/master/repo.min.js" type="text/javascript"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/repo.js/5c0eae0f1b/repo.min.js" integrity="sha512-NeXqSf9P4jJRzzKht9uIs0JpniCx9FruRLMLl/loF0ebUrvuCdB3u5h/sFNeS0eLX0jSaQJs9eZUsCkuOYLF/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+
+<!-- <div data-href="path/to/Profile.html?user=ChathuraGH"></div> -->
+
+<!-- <script type="text/javascript">
+
+// $('body').repo({ user: 'jquery', name: 'jquery', branch: 'strip_iife' })
+// $('body').repo({ user: 'darcyclarke', name: 'Repo.js' })
+</script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/github-repo-widget/e23d85ab8f/jquery.githubRepoWidget.min.js" integrity="sha512-E30r/BSv6/3ayNNGJlD5kMwLvXANkUKs7yV7YB4Uwz+XerKQtAoUHSQSNqDXTsiIpxU4IqeYjv9Mgf9k/ZwMYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+
+<img src="https://raw.githubusercontent.com/ChathuraGH/ChathuraGH.github.io/refs/heads/main/assets/Stickers-downloded-from-giphy/giphy-(70).gif" alt="Cool" style="width:48px;height:48px;">
+
+
+<img src="https://raw.githubusercontent.com/ChathuraGH/ChathuraGH.github.io/refs/heads/main/assets/Stickers-downloded-from-giphy/giphy-(39).gif" alt="Cool" style="width:48px;height:48px;">
+
+
+  </div>
+
+
+
+<!-- TAB CONTENT 3 -->
+  <div id="Gists" class="w3-container w3-border city" style="display:none">
+    <h2>Gists</h2>
+
+
+
+    <script src="https://gist.github.com/ChathuraGH/b91cfb9f986ba1cc992ad4f59c6d5ee0.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/5470281c8f6814d7c15ee45fc9319ac6.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/975d75a8b560f453e371d08d557dcc19.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/e825e9846996a25be83f5f53d9406de4.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/8bbd6e132888422195a319fd1394f761.js"></script>
+
+    <!-- <script src="https://gist.github.com/ChathuraGH/20b78cc09a648a1f428d31c2bec1ba77.js"></script> -->
+
+    <!-- <script src="https://gist.github.com/ChathuraGH/3e1af2e0430440dd2afb6997cdda8a4f.js"></script> -->
+
+    <!-- <script src="https://gist.github.com/ChathuraGH/5125b4a041e2f1b1601d3a2152491db9.js"></script> -->
+
+    <script src="https://gist.github.com/ChathuraGH/010d2b9997e2d332c4aed9d4122dde39.js"></script>
+
+    <!-- <script src="https://gist.github.com/ChathuraGH/f3572e6a98b5f2f6dcb72721b1af9819.js"></script> -->
+
+    <script src="https://gist.github.com/ChathuraGH/27c6d02c5dd37516a74e2b0df47de6d8.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/dc126bd54b013a1eff7f780a5ae2f746.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/17ef637b7c7e979c603a4fe0dc0cf35a.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/f08ed8d188c05cdd063e44d43ad8f228.js"></script>
+
+    <script src="https://gist.github.com/ChathuraGH/84a59b741af8d502636fbe317d749be8.js"></script>
+
+
+    <script src="https://gist.github.com/ChathuraGH/86f51e59ffecff6ec09163546cb0659a.js"></script>
+
+  </div>
+
+
+
+
+<!-- TAB CONTENT 3 -->
+  <div id="Contributions" class="w3-container w3-border city" style="display:none">
+    <h2>Contributions</h2>
+    <p>Will be added soon(2024).</p>
+  </div>
+
+
+
+<!-- TAB CONTENT 3 -->
+  <div id="Timeline" class="w3-container w3-border city" style="display:none">
+    <h2>Timeline</h2>
+    <p>Will be added soon(2024).</p>
+  </div>
+
+
+
+
+<!-- TAB CONTENT 3 -->
+  <div id="Timeline-Personal" class="w3-container w3-border city" style="display:none">
+    <h2>Timeline-Personal</h2>
+    <p>Will be added soon(2024).</p>
+  </div>
+
+
+</div>
+
+
+
+<!-- TAB CONTENT 3 -->
+  <div id="Contacts" class="w3-container w3-border city" style="display:none">
+    <h2>Contacts</h2>
+    <!-- <p>Will be added soon(2024).</p> -->
+
+
+
+
+
+  <li>Email :- <a href="mailto:mcchathuer216@gmail.com?subject=Important Contact" alt="email me"><button class="btn btn--hoverEffect2">Email :- mcchathuer216@gmail.com</button></a></li>
+
+
+
+  <li>Github :- 
+
+<a href="https://github.com/ChathuraGH" title="github">
+    <button class="btn btn--liquidBtn">
+    <span>Follow me on Github</span>
+    <div class="btn--liquidBtn--liquid" />
+    </button>
+</a>
+
+  </li>
+
+  <li>Ask Questions on stackoverflow :- 
+
+    <a href="https://stackoverflow.com/users/13861187/pycm" title="stackoverflow">
+        <button class="btn btn--neon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Pycm
+        </button>
+    </a>
+
+
+
+  </li>
+
+
+
+<style type="text/css">
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.btn--liquidBtn {
+  overflow: hidden;
+}
+.btn--liquidBtn span {
+  position: relative;
+  z-index: 1;
+}
+.btn--liquidBtn:hover div {
+  top: -120px;
+}
+.btn--liquidBtn div {
+  position: absolute;
+  top: -80px;
+  left: 0;
+/*   width: 200px; */
+  width: 100%;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+.btn--liquidBtn div::before, .btn--liquidBtn div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -75%);
+}
+.btn--liquidBtn div::before {
+  border-radius: 45%;
+  background: #141414;
+  animation: liquidAnimation 10s linear infinite;
+}
+.btn--liquidBtn div::after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: liquidAnimation 10s linear infinite;
+}
+@keyframes liquidAnimation {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+.btn--neon {
+  color: #03e9f4;
+  overflow: hidden;
+  transition: 0.5s;
+  filter: hue-rotate(290deg);
+}
+.btn--neon:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+}
+.btn--neon::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+}
+.btn--neon span {
+  position: absolute;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+}
+.btn--neon span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  animation: borderAnimation1 1s linear infinite;
+}
+@keyframes borderAnimation1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.btn--neon span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  animation: borderAnimation2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes borderAnimation2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.btn--neon span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  animation: borderAnimation3 1s linear infinite;
+}
+@keyframes borderAnimation3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.btn--neon span:nth-child(4) {
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  animation: borderAnimation4 2s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes borderAnimation4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.btn--hoverEffect2 {
+  display: inline-block;
+  z-index: 1;
+  color: #ff3c83;
+}
+.btn--hoverEffect2:hover {
+  color: #fff;
+}
+.btn--hoverEffect2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s all ease;
+  box-sizing: border-box;
+}
+.btn--hoverEffect2:hover::before {
+  border-radius: 4px;
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #fd297a, #9424f0);
+  opacity: 1;
+  z-index: -1;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <li>Linkedin :- </li>
+
+  <li>Linkedin :- </li>
+
+  <li>Linkedin :- </li>
+
+  <li>Linkedin :- </li>
+
+  <li>Linkedin :- </li> -->
+
+
+
+
+
+
+<br><br><br><br><br><br><br>
+
+
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+
+
+
+</body>
+</html>
