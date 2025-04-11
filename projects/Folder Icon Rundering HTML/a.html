@@ -1,0 +1,86 @@
+<style>
+
+div.a2 {
+	transform-style: preserve-3d;
+	position:absolute;
+	left:1px;
+    width: 150px;
+    height: 80px;
+    -webkit-transform: rotateY(-60deg) skewY(3deg);
+    perspective-origin: left;
+    background-color: lightgreen;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    
+    
+}
+
+div.a1 {
+	transform-style: preserve-3d;
+	position:absolute;
+	left:1px;
+    width: 150px;
+    height: 80px;
+    -webkit-transform: rotateY(-50deg) skewY(2deg);
+    perspective-origin: left;
+    background-color: lightblue;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    
+    
+}
+
+
+div.b {
+	transform-style: preserve-3d;
+	position:absolute;
+	left:1px;
+    width: 150px;
+    height: 80px;
+    -webkit-transform: rotateY(-70deg) skewY(4deg);
+    perspective-origin: left;
+    background-color: yellow;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    
+    
+}
+
+div.c {
+	transform-style: preserve-3d;
+	position:absolute;
+    left:1px;
+    width: 150px;
+    height: 80px;
+    -webkit-transform: rotateY(-40deg) skewY(-1deg);
+    perspective-origin: left;
+    background-color: green;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    
+ 
+}
+div.d {
+	position:relative;
+    perspective: 420px;
+    perspective-origin: left;
+ 
+}
+</style>
+
+
+
+<div class="d">
+
+<div class="c">Hello World!</div>
+
+
+<div class="a1">Hello World!</div>
+
+<div class="a2">Hello World!</div>
+
+
+
+<div class="b">Hello World!</div>
+</div>
+

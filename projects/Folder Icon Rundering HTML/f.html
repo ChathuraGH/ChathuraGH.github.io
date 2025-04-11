@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<script src="jquery-3.5.1.min.js"></script>
+
+
+
+
+<style>
+
+div.a2 {
+    transform-style: preserve-3d;
+    position:absolute;
+    left:1px;
+    width: 120px;
+    height: 80px;
+    -webkit-transform: rotateY(-60deg) skewY(3deg);
+    perspective-origin: left;
+    /*background-color: lightgreen;*/
+    /*background-color: white;*/
+    background-color: none;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    background-image: url('medium-cover.jpg');
+    /*background-image: url('Screenshot (12050).png');*/
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+    /*background-size: cover;*/
+    background-attachment: fixed;
+    /*background-position: right top;*/
+    background-position: center;
+    
+    
+}
+
+div.a1 {
+    transform-style: preserve-3d;
+    position:absolute;
+    left:1px;
+    width: 120px;
+    height: 80px;
+    -webkit-transform: rotateY(-50deg) skewY(2deg);
+    perspective-origin: left;
+    /*background-color: lightblue;*/
+    /*background-color: white;*/
+    background-color: none;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    background-image: url('medium-cover (4).jpg');
+    /*background-image: url('shutterstock_648907024.jpg');*/
+    /*background-image: url('Screenshot (12050).png');*/
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+    /*background-size: cover;*/
+    background-attachment: fixed;
+    /*background-position: right top;*/
+    background-position: center;
+    
+}
+
+
+div.b {
+    transform-style: preserve-3d;
+    position:absolute;
+    left:1px;
+    width: 150px;
+    /*height: 80px;*/
+    -webkit-transform: rotateY(-80deg) skewY(4deg);
+    perspective-origin: left;
+
+
+    /*background-color: #cc9966;*/
+    background-color: none;
+
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+
+
+    height: 101px;
+    top: -21.5px;
+
+
+    /*background-image: url('2023-4-20 icons/folder_1.svg');*/
+    /*background-image: url('2023-4-20 icons/folder_1_cc9966.svg');*/
+    background-image: url('2023-4-20 icons/folder_1_cc9966_2.svg');
+
+    /*background-image: url('2023-4-20 icons/folder_1_green.svg');*/
+    /*background-image: url('2023-4-20 icons/folder_1.png');*/
+    
+    /*background-size: 100% 100%;*/
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-position: right top;*/
+    background-position: left top;
+    /*background-position: center;*/
+    
+    
+}
+
+div.c {
+    transform-style: preserve-3d;
+    position:absolute;
+    left:1px;
+    width: 120px;
+    height: 80px;
+    -webkit-transform: rotateY(-40deg) skewY(-1deg);
+    perspective-origin: left;
+    background-color: #cc9966;
+    backface-visibility: visible;
+    transform-origin: 0 0 0;
+    
+ 
+}
+div.d {
+    position:relative;
+    perspective: 420px;
+    perspective-origin: left;
+ 
+}
+div{
+    /*border: 1px solid black;*/
+}
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<h2>hover</h2>
+
+
+
+<div class="d">
+
+<div class="c"></div>
+
+
+<div class="a1"></div>
+<div class="a2"></div>
+
+
+
+<div class="b"></div>
+
+
+</div>
+
+
+
+
+<style type="text/css">
+
+div.cover_open  {
+/*     transition: .4s linear; */
+    transition: .8s ease-out;
+    -webkit-transform:rotateY(-100deg) skewY(4deg);
+}
+
+div.image_open {
+/*     transition: .8s linear; */
+/*     elastic */
+/*     transition: .8s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%); */
+    /* bounce */
+/*     transition: .8s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%); */
+
+
+
+
+/*     transition: .8s ease-in; */
+    transition: .8s ease-out;
+/*     transition: .8s ease-in-out; */
+/*     transition: .8s cubic-bezier(0.4, 0, 1, 1); */
+/*     transition: .8s cubic-bezier(0.18, 0.89, 0.32, 1.28); */
+
+
+
+
+
+
+    -webkit-transform:rotateY(-80deg) skewY(3deg);
+}
+    
+</style>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+$('div').hover(
+    function(event) {
+    console.log(event.target);
+    $('div.b').addClass("cover_open");
+    $('div.a2').addClass("image_open");
+    },
+    function(event) {
+    console.log(event.target);
+    $('div.b').removeClass("cover_open");
+    $('div.a2').removeClass("image_open");
+    }
+);
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<div id="" class="grid-container" background="Transparent">
+
+  <div class="desktop_start_manue-cube">
+
+
+
+<!-- KEEP THE DIV ORDER -->
+    <div class="desktop_start_manue-side desktop_start_manue-top">top-E📱E</div>
+
+    <div class="desktop_start_manue-side desktop_start_manue-left">left-B😀B</div>
+    <div class="desktop_start_manue-side desktop_start_manue-right">right-C😁C</div>
+
+ 
+    <div class="desktop_start_manue-side desktop_start_manue-bottom">bottom-F⭐F</div>
+    <div class="desktop_start_manue-side desktop_start_manue-back">back-D✅D</div>
+
+
+   <div class="desktop_start_manue-side desktop_start_manue-front">front-A🎁A</div>
+
+
+
+  </div>
+
+
+
+<style type="text/css">
+
+.desktop_start_manue-cube {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  /*transform-style: preserve-3d;*/
+  /*-webkit-animation: cubeRotate 10s linear infinite;*/
+          /*animation: cubeRotate 10s linear infinite;*/
+}
+
+
+.desktop_start_manue-cube:hover {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+/*  -webkit-animation: cubeRotate 10s linear infinite;
+          animation: cubeRotate 10s linear infinite;*/
+
+
+/*best use this*/
+/*   -webkit-animation: cubeRotatee 5s forwards; */
+  animation: cubeRotatee 5s linear infinite;
+}
+
+
+@-webkit-keyframes cubeRotatee {
+
+20.0%{-webkit-transform: rotateY(0deg) rotateX(-90deg) rotateZ(0deg);}
+40.0%{-webkit-transform: rotateY(0deg) rotateX(-90deg) rotateZ(-90deg);}
+60.0%{-webkit-transform: rotateY(-90deg) rotateX(-90deg) rotateZ(90deg);}
+80.0%{-webkit-transform: rotateY(0deg) rotateX(-90deg) rotateZ(90deg);}
+100.0%{-webkit-transform: rotateY(0deg) rotateX(-90deg) rotateZ(180deg);}
+}
+
+
+.desktop_start_manue-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  border: 2px solid white;
+
+  word-break: break-all;
+  overflow-y: hidden;
+
+/*   background: url('test/weic2216b.jpg') no-repeat center fixed; */
+  background-size: cover;
+}
+
+.desktop_start_manue-front {
+  background-color: lightgreen;
+  transform: translateZ(50px);
+
+}
+
+.desktop_start_manue-back {
+  background-color: lightblue;
+  transform: translateZ(-50px);
+
+
+}
+
+.desktop_start_manue-left {
+  background-color: green;
+  transform: rotateY(-90deg) translateZ(50px);
+
+}
+
+.desktop_start_manue-right {
+  background-color: lightgray;
+  transform: rotateY(90deg) translateZ(50px);
+
+
+}
+
+.desktop_start_manue-top {
+  background-color: blue;
+  transform: rotateX(90deg) translateZ(50px);
+
+}
+
+.desktop_start_manue-bottom {
+  background-color: yellow;
+  transform: rotateX(-90deg) translateZ(50px);
+
+} 
+
+</style>
+
+
+
+<style>
+body{
+  margin: 0px;
+  /*BY ME*/
+  /*must be 0 to remove grid-container space around it. */
+}
+
+.grid-container {
+  padding: 100px;
+}
+
+</style>
+</div>
+
+
+
+
+

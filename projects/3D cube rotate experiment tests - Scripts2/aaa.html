@@ -1,0 +1,183 @@
+<div id="" class="grid-container" background="Transparent">
+
+  <div class="desktop_start_manue-cube">
+    <div class="desktop_start_manue-side desktop_start_manue-front">A🎁A</div>
+    <div class="desktop_start_manue-side desktop_start_manue-left">B😀B</div>
+    <div class="desktop_start_manue-side desktop_start_manue-right">C😁C</div>
+    <div class="desktop_start_manue-side desktop_start_manue-back">D✅DD✅DD✅DD✅DD✅DD✅DD✅DD✅DD✅DD✅DD✅D</div>
+    <div class="desktop_start_manue-side desktop_start_manue-top">E📱E</div>
+    <div class="desktop_start_manue-side desktop_start_manue-bottom">F⭐F</div>
+  </div>
+
+
+
+<style type="text/css">
+
+.desktop_start_manue-cube {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  /*transform-style: preserve-3d;*/
+  /*-webkit-animation: cubeRotate 10s linear infinite;*/
+          /*animation: cubeRotate 10s linear infinite;*/
+}
+
+
+.desktop_start_manue-cube:hover {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+/*  -webkit-animation: cubeRotate 10s linear infinite;
+          animation: cubeRotate 10s linear infinite;*/
+
+
+/*best use this*/
+  -webkit-animation: cubeRotatee 0.5s forwards;
+/*   animation: cubeRotate 10s linear infinite; */
+
+/*also cool*/
+/* -webkit-animation: cubeRotate 0.5s forwards; */
+/* -webkit-animation: cubeRotate 1s forwards; */
+/* -webkit-animation: cubeRotate 2s forwards; */
+/* -webkit-animation: cubeRotate 10s forwards; */
+
+/* -webkit-animation: cubeRotate 0.5s linear infinite; */
+/* -webkit-animation: cubeRotate 1s linear infinite; */
+/* -webkit-animation: cubeRotate 2s linear infinite; */
+/* -webkit-animation: cubeRotate 10s linear infinite; */
+
+}
+
+
+@-webkit-keyframes cubeRotatee {
+  from {
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  to {
+/*     up */
+    transform: rotateY(0deg) rotateX(90deg) rotateZ(0deg);
+/*     down */
+/*     transform: rotateY(0deg) rotateX(-90deg) rotateZ(0deg); */
+
+/*     right */
+/*     transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg); */
+/*     left */
+/*     transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg); */
+/*     2d_right */
+/*     transform: rotateY(0deg) rotateX(0deg) rotateZ(90deg); */
+/*     2d_left */
+/*     transform: rotateY(0deg) rotateX(0deg) rotateZ(-90deg); */
+  }
+}
+
+
+@-webkit-keyframes cubeRotate {
+  from {
+    transform: rotateY(0deg) rotateX(720deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg);
+  }
+}
+
+@keyframes cubeRotate {
+  from {
+    transform: rotateY(0deg) rotateX(720deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg);
+  }
+}
+
+.desktop_start_manue-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  border: 2px solid white;
+
+  word-break: break-all;
+  overflow-y: hidden;
+
+/*   background: url('test/weic2216b.jpg') no-repeat center fixed; */
+  background-size: cover;
+}
+
+.desktop_start_manue-front {
+  background-color: lightblue;
+  transform: translateZ(-50px);
+
+/*   background-image: url('test/68ee7220.jpg'); */
+/*   background-repeat: no-repeat; */
+
+/*   background: url('test/68ee7220.jpg') no-repeat center fixed; */
+}
+
+.desktop_start_manue-back {
+  background-color: lightgreen;
+  transform: translateZ(50px);
+
+/*   background: url('test/100-very-special-good-morning-images-quotes-photos.jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-left {
+  background-color: lightgray;
+  transform: rotateY(90deg) translateZ(50px);
+
+/*   background: url('test/983794168.jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-right {
+  background-color: green;
+  transform: rotateY(-90deg) translateZ(50px);
+
+/*   background: url('test/Unique-Profile-Images-Pics.jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-top {
+  background-color: blue;
+  transform: rotateX(90deg) translateZ(50px);
+
+/*   background: url('test/images (1).jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-bottom {
+  background-color: yellow;
+  transform: rotateX(-90deg) translateZ(50px);
+
+/*   background: url('test/images (3).jpg') no-repeat center fixed; */
+  background-size: cover;
+
+} 
+
+</style>
+
+
+
+<style>
+body{
+  margin: 0px;
+  /*BY ME*/
+  /*must be 0 to remove grid-container space around it. */
+}
+
+.grid-container {
+  padding: 10px;
+}
+
+</style>
+</div>
+
+
+
+
+

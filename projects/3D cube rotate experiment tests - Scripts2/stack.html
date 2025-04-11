@@ -1,0 +1,38 @@
+
+
+<div class="conatiner">
+
+</div>
+
+
+
+<script type="text/javascript">
+  
+let buttons = [
+      {
+        buttonId: 103676,
+        link: "www.google.com",
+      },
+      {
+        buttonId: 432549,
+        link: "www.yahoo.com",
+      },
+    ];
+
+
+
+buttons.forEach(function(button){
+  document.querySelector('.conatiner').innerHTML += `
+
+    <a href="javascript:window.open('https://${button['link']}')">
+      <div data-id="${button['buttonId']}" class="button-simple">first points</div>
+    </a>
+
+  `;
+});
+
+
+// One line as below, if you want.
+// buttons.forEach(function(button){document.querySelector('.conatiner').innerHTML += `<a href="javascript:window.open('https://${button['link']}')"><div data-id="${button['buttonId']}" class="button-simple">first points</div></a>`;});
+
+</script>

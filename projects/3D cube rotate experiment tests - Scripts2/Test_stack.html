@@ -1,0 +1,174 @@
+
+
+
+<div id="" class="grid-container" background="Transparent">
+<div class="desktop_start_manue-cube">
+<div class="desktop_start_manue-side desktop_start_manue-front">front-C</div>
+<div class="desktop_start_manue-side desktop_start_manue-left">left-F</div>
+<div class="desktop_start_manue-side desktop_start_manue-right">right-D</div>
+<div class="desktop_start_manue-side desktop_start_manue-back">back-A</div>
+<div class="desktop_start_manue-side desktop_start_manue-top">top-E</div>
+<div class="desktop_start_manue-side desktop_start_manue-bottom">bottom-B</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<style type="text/css">
+
+
+
+
+
+
+
+
+
+.desktop_start_manue-cube {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  /*transform-style: preserve-3d;*/
+  /*-webkit-animation: cubeRotate 10s linear infinite;*/
+          /*animation: cubeRotate 10s linear infinite;*/
+}
+
+
+.desktop_start_manue-cube:hover {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+/*  -webkit-animation: cubeRotate 10s linear infinite;
+          animation: cubeRotate 10s linear infinite;*/
+
+
+/*best use this*/
+/*   -webkit-animation: cubeRotatee 5s forwards; */
+  animation: cubeRotateDown 5s linear infinite;
+}
+
+
+@-webkit-keyframes cubeRotatee {
+
+20.0%{-webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg);}
+/* (1-to-) */
+
+40.0%{-webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(90deg);}
+/* (6-to-) */
+
+60.0%{-webkit-transform: rotateY(-90deg) rotateX(-180deg) rotateZ(0deg);}
+/* (4-to-) */
+
+80.0%{-webkit-transform: rotateY(0deg) rotateX(-180deg) rotateZ(0deg);}
+/* (3-to-) */
+
+100.0%{-webkit-transform: rotateY(0deg) rotateX(-90deg) rotateZ(0deg);}
+/* (5-to-) */
+
+}
+
+
+.desktop_start_manue-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  border: 2px solid white;
+
+  word-break: break-all;
+  overflow-y: hidden;
+
+/*   background: url('test/weic2216b.jpg') no-repeat center fixed; */
+  background-size: cover;
+}
+
+.desktop_start_manue-front {
+  background-color: lightblue;
+  transform: translateZ(-50px);
+
+/*   background-image: url('test/68ee7220.jpg'); */
+/*   background-repeat: no-repeat; */
+
+/*   background: url('test/68ee7220.jpg') no-repeat center fixed; */
+}
+
+.desktop_start_manue-back {
+  background-color: lightgreen;
+  transform: translateZ(50px);
+
+/*   background: url('test/100-very-special-good-morning-images-quotes-photos.jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-left {
+  background-color: lightgray;
+  transform: rotateY(90deg) translateZ(50px);
+
+/*   background: url('test/983794168.jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-right {
+  background-color: green;
+  transform: rotateY(-90deg) translateZ(50px);
+
+/*   background: url('test/Unique-Profile-Images-Pics.jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-top {
+  background-color: blue;
+  transform: rotateX(90deg) translateZ(50px);
+
+/*   background: url('test/images (1).jpg') no-repeat center fixed; */
+  background-size: cover;
+
+}
+
+.desktop_start_manue-bottom {
+  background-color: yellow;
+  transform: rotateX(-90deg) translateZ(50px);
+
+/*   background: url('test/images (3).jpg') no-repeat center fixed; */
+  background-size: cover;
+
+} 
+
+
+
+
+
+
+@-webkit-keyframes cubeRotateDown {
+0% {
+transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+}
+17% {
+transform: rotateY(0deg) rotateX(90deg) rotateZ(0deg);
+}
+33% {
+transform: rotateY(0deg) rotateX(180deg) rotateZ(0deg);
+}
+50% {
+transform: rotateY(90deg) rotateX(180deg) rotateZ(0deg);
+}
+67% {
+transform: rotateY(90deg) rotateX(180deg) rotateZ(-90deg);
+}
+83% {
+transform: rotateY(90deg) rotateX(180deg) rotateZ(-180deg);
+}
+100% {
+transform: rotateY(180deg) rotateX(180deg) rotateZ(-180deg);
+}
+}
+
+</style>
