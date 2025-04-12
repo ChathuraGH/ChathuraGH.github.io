@@ -1,0 +1,49 @@
+<!-- Edited / Changed by me -->
+<!-- look at Browser console -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="tesseract.min.js"></script>
+  </head>
+  <body>
+    <input type="file" id="uploader" multiple>
+    <script type="module">
+
+      // A worker is created once and used every time a user uploads a new file.  
+      const worker = await Tesseract.createWorker("sin+eng", 1, {
+        // const worker = await Tesseract.createWorker("eng+sin", 1, {
+        // const worker = await Tesseract.createWorker("sin", 1, {
+      // const worker = await Tesseract.createWorker("eng", 1, {
+          // corePath: '../../node_modules/tesseract.js-core',
+          // workerPath: "/dist/worker.min.js",
+          logger: function(m){console.log(m);}
+        });
+
+      const recognize = async function(evt){
+        const files = evt.target.files;
+        
+        for (let i=0; i<files.length; i++) {
+          const ret = await worker.recognize(files[i]);
+
+          console.log(ret);
+          console.log(ret.data);
+          console.log(ret.data.text);
+
+
+
+          ret.data.lines.forEach(function(l){
+            if(l.confidence>=50){
+              console.log(l.confidence,'-::-',l.text);
+            }
+            
+            // console.log(line);
+          });
+
+
+        }
+      }
+      const elm = document.getElementById('uploader');
+      elm.addEventListener('change', recognize);
+    </script>
+  </body>
+</html>
