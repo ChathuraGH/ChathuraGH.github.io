@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TTS Library Demo</title>
+    <style>
+        .tts-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        #tts-global-controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tts-close-btn {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Hello World</h1>
+    <p class="content">This is a text-to-speech demonstration</p>
+
+    <script>
+        class TTSElement {
+            static #globalControls = null;
+            static #currentInstance = null;
+            static #predefinedVoices = [
+                { name: 'Robotic', config: { pitch: 2, rate: 0.8 } },
+                { name: 'Slow Calm', config: { pitch: 0.8, rate: 0.7 } },
+                { name: 'Fast Excited', config: { pitch: 1.2, rate: 1.5 } }
+            ];
+
+            constructor(element) {
+                this.element = element;
+                this.utterance = null;
+                this.uiContainer = null;
+                this.voices = [];
+                this.selectedVoice = null;
+                this.selectedLang = 'en-US';
+                this.isPlaying = false;
+                this.init();
+            }
+
+            async init() {
+                await this.loadVoices();
+                this.createUI();
+            }
+
+            loadVoices() {
+                return new Promise(resolve => {
+                    const voices = speechSynthesis.getVoices();
+                    if (voices.length) {
+                        this.voices = voices;
+                        resolve();
+                    } else {
+                        speechSynthesis.onvoiceschanged = () => {
+                            this.voices = speechSynthesis.getVoices();
+                            resolve();
+                        };
+                    }
+                });
+            }
+
+            createUI() {
+                this.uiContainer = document.createElement('div');
+                this.uiContainer.className = 'tts-container';
+
+                // Play/Pause Button
+                this.playBtn = document.createElement('button');
+                this.playBtn.textContent = '▶';
+                this.playBtn.onclick = () => this.togglePlayback();
+
+                // Language Selector
+                const langs = [...new Set(this.voices.map(v => v.lang))];
+                this.langSelect = document.createElement('select');
+                langs.forEach(lang => {
+                    const option = document.createElement('option');
+                    option.value = lang;
+                    option.textContent = lang;
+                    this.langSelect.appendChild(option);
+                });
+                this.langSelect.value = this.selectedLang;
+                this.langSelect.onchange = () => this.handleLangChange();
+
+                // Voice Selector
+                this.voiceSelect = document.createElement('select');
+                this.updateVoiceSelector();
+
+                this.uiContainer.appendChild(this.playBtn);
+                this.uiContainer.appendChild(this.langSelect);
+                this.uiContainer.appendChild(this.voiceSelect);
+                
+                // Insert after target element
+                this.element.parentNode.insertBefore(
+                    this.uiContainer, 
+                    this.element.nextSibling
+                );
+            }
+
+            updateVoiceSelector() {
+                this.voiceSelect.innerHTML = '';
+                
+                // Device Voices
+                const deviceGroup = document.createElement('optgroup');
+                deviceGroup.label = 'Device Voices';
+                this.voices
+                    .filter(v => v.lang === this.selectedLang)
+                    .forEach(voice => {
+                        const option = document.createElement('option');
+                        option.value = `device:${voice.name}`;
+                        option.textContent = voice.name;
+                        deviceGroup.appendChild(option);
+                    });
+                this.voiceSelect.appendChild(deviceGroup);
+                
+                // Predefined Voices
+                const customGroup = document.createElement('optgroup');
+                customGroup.label = 'Custom Voices';
+                TTSElement.#predefinedVoices.forEach(voice => {
+                    const option = document.createElement('option');
+                    option.value = `custom:${voice.name}`;
+                    option.textContent = voice.name;
+                    customGroup.appendChild(option);
+                });
+                this.voiceSelect.appendChild(customGroup);
+            }
+
+            handleLangChange() {
+                this.selectedLang = this.langSelect.value;
+                this.updateVoiceSelector();
+            }
+
+            togglePlayback() {
+                if (this.isPlaying) {
+                    this.pause();
+                } else {
+                    this.play();
+                }
+            }
+
+            play() {
+                if (this.isPlaying) return;
+                
+                const text = this.element.textContent;
+                if (!text) return;
+                
+                this.utterance = new SpeechSynthesisUtterance(text);
+                this.applyVoiceSettings();
+                
+                this.utterance.onstart = () => {
+                    this.isPlaying = true;
+                    this.playBtn.textContent = '⏸';
+                    TTSElement.setAsActive(this);
+                };
+                
+                this.utterance.onend = this.utterance.onerror = () => {
+                    this.isPlaying = false;
+                    this.playBtn.textContent = '▶';
+                };
+                
+                speechSynthesis.speak(this.utterance);
+            }
+
+            applyVoiceSettings() {
+                const [type, name] = this.voiceSelect.value.split(':');
+                
+                if (type === 'device') {
+                    const voice = this.voices.find(v => 
+                        v.name === name && v.lang === this.selectedLang
+                    );
+                    if (voice) this.utterance.voice = voice;
+                } else {
+                    const voiceConfig = TTSElement.#predefinedVoices.find(
+                        v => v.name === name
+                    );
+                    if (voiceConfig) {
+                        Object.assign(this.utterance, voiceConfig.config);
+                    }
+                }
+                
+                this.utterance.lang = this.selectedLang;
+            }
+
+            pause() {
+                speechSynthesis.pause();
+                this.isPlaying = false;
+                this.playBtn.textContent = '▶';
+            }
+
+            static setAsActive(instance) {
+                TTSElement.#currentInstance = instance;
+                TTSElement.showGlobalControls();
+            }
+
+            static showGlobalControls() {
+                if (!TTSElement.#globalControls) {
+                    this.createGlobalControls();
+                }
+                TTSElement.#globalControls.style.display = 'flex';
+            }
+
+            static createGlobalControls() {
+                const container = document.createElement('div');
+                container.id = 'tts-global-controls';
+                
+                // Play/Pause Button
+                const playBtn = document.createElement('button');
+                playBtn.textContent = '⏸';
+                playBtn.onclick = () => {
+                    if (TTSElement.#currentInstance?.isPlaying) {
+                        TTSElement.#currentInstance.pause();
+                        playBtn.textContent = '▶';
+                    } else {
+                        TTSElement.#currentInstance?.play();
+                        playBtn.textContent = '⏸';
+                    }
+                };
+                
+                // Stop Button
+                const stopBtn = document.createElement('button');
+                stopBtn.textContent = '⏹';
+                stopBtn.onclick = () => {
+                    speechSynthesis.cancel();
+                    if (TTSElement.#currentInstance) {
+                        TTSElement.#currentInstance.isPlaying = false;
+                        TTSElement.#currentInstance.playBtn.textContent = '▶';
+                    }
+                    playBtn.textContent = '▶';
+                };
+                
+                // Close Button
+                const closeBtn = document.createElement('span');
+                closeBtn.className = 'tts-close-btn';
+                closeBtn.textContent = '✖';
+                closeBtn.onclick = () => {
+                    container.style.display = 'none';
+                };
+                
+                container.appendChild(playBtn);
+                container.appendChild(stopBtn);
+                container.appendChild(closeBtn);
+                document.body.appendChild(container);
+                TTSElement.#globalControls = container;
+            }
+        }
+
+        // Initialize TTS for elements
+        function initTTS(selector) {
+            document.querySelectorAll(selector).forEach(el => {
+                new TTSElement(el);
+            });
+        }
+
+        // Initialize when voices are ready
+        window.speechSynthesis.onvoiceschanged = function() {
+            initTTS('#title');
+            initTTS('.content');
+        };
+    </script>
+</body>
+  </html>
